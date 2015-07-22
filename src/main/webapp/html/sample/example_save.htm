@@ -1,0 +1,94 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>기본예제 - 저장&저장취소</title>
+	<link rel='stylesheet' href='/css/wisegrid.css' type='text/css'>
+	<script type='text/javascript' src="/js/jquery/jquery-1.11.1.min.js"></script>
+	<script type='text/javascript' src='/js/WiseGrid_TAG.js'></script>
+	<script type='text/javascript' src='/js/WiseGrid_Property.js'></script>
+	<script type='text/javascript' src='/js/WiseGrid_Save.js'></script>
+	<script language=javascript for="WiseGrid" event="Initialize()"> init(); </script>
+	<script language=javascript for="WiseGrid" event="EndQuery()"> GridEndQuery(); </script>
+<script language="JavaScript">
+</script>
+</head>
+<body>
+<form name="form">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr height="20">
+			<td class="title1_k">
+				&nbsp;기본예제<br><hr>
+			</td>
+		</tr>
+		<tr height="20">
+			<td class="title2_k">
+				&nbsp;&nbsp;&nbsp; 저장 & 저장취소
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<table width="98%" border="0" cellspacing="0" cellpadding="0"  class="title3">
+		<tr>
+			<table width="100%" border="0" cellpadding="2" cellspacing="0" >
+				<tr>
+					<td width="80">등록일 : </td>
+					<td width="200">
+						<input type="text" id="from_date" name="from_date" size="8" > ~
+						<input type="text" id="to_date" name="to_date" size="8" >
+					</td>
+					<td width="80">자재구분 : </td>
+					<td width="200">
+						<select id="item_flag">
+							<option value="ALL">전체</option>
+							<option value="CPU">프로세서</option>
+							<option value="MEM">메모리</option>
+							<option value="MAB">메인보드</option>
+							<option value="VID">그래픽카드</option>
+							<option value="MOR">모니터</option>
+							<option value="HDD">하드디스크</option>
+							<option value="CDR">CDROM</option>
+							<option value="KEY">키보드</option>
+						</select>
+					</td>
+					<td width="80">제품명 검색 : </td>
+					<td width="250">
+						<input type="text" id="item_name">
+					</td>
+					<td width="400" valign="top" align="right">
+						<table border=0 cellpadding="0" cellspacing="0">
+							<tr>
+								<td><script language="javascript">btn("doQuery()","조회")</script></td>
+								<td><script language="javascript">btn("doDelete()","삭제")</script></td>
+								<td><script language="javascript">btn("doLineInsert()","행추가")</script></td>
+								<td><script language="javascript">btn("doSave()","저장")</script></td>
+								<td><script language="javascript">btn("doSaveCancel()","저장취소")</script></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</tr>
+	</table>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" >
+		<tr>
+			<td bgcolor="#00455d" height="3"></td>
+		</tr>
+		<tr>
+			<td align='left'>
+				<script>initWiseGrid("WiseGrid", "100%", "350");</script>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<!-- 조회, 삭제, 행추가 실행되면 발생한다.-->
+	<div id='message' style="display:none">
+		<fieldset style="overflow:auto;">
+			<legend> [변경된 내용] </legend>
+			<textarea name="confirm" rows= "8" cols="101" style="border:0px" scrolling="auto"  />
+		</fieldset>
+	</div>
+
+</form>
+</body>
+</html>
